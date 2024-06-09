@@ -53,3 +53,10 @@ class TestBooksCollector:
         collector.add_new_book("Аватар")
         collector.add_book_in_favorites("Аватар")
         assert collector.get_list_of_favorites_books() == ["Аватар"]
+
+    def test_add_some_books_and_check_count(self):
+        collector = BooksCollector()
+        books_to_add = ["Аватар", "Маугли", "Сказки"]
+        for book in books_to_add:
+            collector.add_new_book(book)
+        assert len(collector.books_genre) == len(books_to_add)
